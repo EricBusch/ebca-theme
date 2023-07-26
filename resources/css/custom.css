@@ -1,42 +1,20 @@
-article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
+.contained {
+    @apply mx-auto max-w-7xl px-8 sm:px-10 md:px-12;
 }
 
-.entry-content, .block-editor-block-list__layout {
-    h1 {
-        @apply text-2xl;
-    }
+.contained-images {
+    @apply mx-auto max-w-7xl px-0 sm:px-10 md:px-12;
+}
 
-    h2 {
-        @apply text-xl;
-    }
 
-    h3 {
-        @apply text-lg;
-    }
+.default-width {
+    @apply mx-auto max-w-7xl;
+}
 
-    p, ul, ol {
-        a {
-            @apply text-blue-500 underline;
+.default-padding-x {
+    @apply px-8 sm:px-10 md:px-12;
+}
 
-            &:hover {
-                @apply no-underline;
-            }
-        }
-
-        @apply mb-8;
-    }
-
-    ul:not(.block-editor-block-variation-picker__variations) {
-        li {
-            @apply list-disc list-inside;
-        }
-    }
-
-    ol {
-        li {
-            @apply list-decimal list-inside;
-        }
-    }
+.default-margin-b {
+    @apply mb-8 lg:mb-10 xl:mb-12;
 }

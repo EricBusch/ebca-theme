@@ -4,8 +4,23 @@ Theme URI: https://github.com/jeffreyvr/tailpress
 Author: Jeffrey van Rossum
 Author URI: https://vanrossum.dev
 Description: A WordPress theme made with TailPress.
-Version: 1.0.0
+Version: 1.0.1
 License: MIT
 License URI: https://github.com/jeffreyvr/tailpress/blob/master/LICENSE
 Text Domain: tailpress
 */
+
+@layer base {
+    body {
+        @apply bg-gradient-to-b from-gray-50 to-gray-100 bg-fixed;
+    }
+    .contained {
+        @apply mx-auto max-w-7xl px-8 sm:px-10 md:px-12;
+    }
+    .contained-images {
+        @apply mx-auto max-w-7xl px-0 sm:px-10 md:px-12;
+    }
+    .contained-padding-x {
+        @apply px-8 sm:px-10 md:px-12;
+    }
+}

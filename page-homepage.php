@@ -65,7 +65,10 @@
 						</a>
 					<?php endif; ?>
 				</div>
-				<div class="text-sm text-white text-opacity-80">&copy;<?php esc_html_e(date('Y')); ?> Eric Busch</div>
+				<div class="text-sm text-white text-opacity-80">
+					&copy;<?php esc_html_e(date('Y')); ?>
+					<?php echo get_field( 'fine_print' ); ?>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -18,3 +18,7 @@
 .default-margin-b {
     @apply mb-8 lg:mb-10 xl:mb-12;
 }
+
+#primary-menu > ul > li > a {
+    @apply block py-2 leading-none text-gray-500;
+}

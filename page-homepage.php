@@ -66,7 +66,7 @@
 					<?php endif; ?>
 				</div>
 				<div class="text-sm text-white text-opacity-80">
-					&copy;<?php esc_html_e(date('Y')); ?>
+					&copy;<?php esc_html_e( date_i18n( 'Y' ) ); ?>
 					<?php echo get_field( 'fine_print' ); ?>
 				</div>
 			</div>

@@ -6,6 +6,7 @@
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
+<!-- div#page -->
 <div id="page" class="min-h-screen flex flex-col">
 
 	<?php do_action( 'tailpress_header' ); ?>
@@ -72,6 +73,7 @@
 
 	</header>
 
+	<!-- div#content -->
 	<div id="content" class="site-content flex-grow">
 		<?php do_action( 'tailpress_content_start' ); ?>
 		<main>

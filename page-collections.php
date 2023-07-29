@@ -13,6 +13,7 @@
 			<div
 				class="grid grid-cols-1 gap-6 font-heading sm:grid-cols-2 sm:gap-8 md:gap-8 lg:grid-cols-3 lg:gap-10 xl:gap-12">
 				<?php foreach ( busch_get_collections() as $collection ) : ?>
+					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
 					   class="grid aspect-[16/9] grid-cols-1 grid-rows-1 flex-col justify-center rounded bg-black bg-opacity-50 bg-cover bg-center bg-no-repeat p-8 text-white bg-blend-multiply shadow-md transition duration-300 hover:bg-opacity-70 hover:shadow-sm lg:aspect-[4/5]"
@@ -31,6 +32,11 @@
 										<?php esc_html_e( $image_count ); ?>
 										<?php echo $image_count === 1 ? 'image' : 'images'; ?>
 									</div>
+									<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
+										<div>
+											<span class="inline-flex items-center rounded-md bg-teal-100 px-1.5 py-0.5 text-xs font-medium text-teal-800 shadow"><?php esc_html_e( count( $new_images ) ); ?> new</span>
+										</div>
+									<?php endif; ?>
 								</div>
 								<div
 									class="m-0 mt-auto p-0 text-right text-xs uppercase leading-none tracking-wider text-gray-200">

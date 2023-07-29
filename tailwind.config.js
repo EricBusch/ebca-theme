@@ -26,6 +26,10 @@ module.exports = {
                 '3xl': '.40em',
                 '4xl': '.45em',
                 '5xl': '.5em',
+            },
+            maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
             }
         },
     },

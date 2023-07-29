@@ -10,7 +10,7 @@
 			] ); ?>
 
 			<!-- Display Images -->
-			<section class="contained-images mb-8 lg:mb-10 xl:mb-12">
+			<section class="mx-auto max-w-8xl default-padding-x default-margin-b">
 				<div class="flex flex-wrap items-center gap-x-2 gap-y-px sm:gap-y-[8vh]">
 
 					<?php foreach ( busch_get_collection_images( get_the_ID(), 'large', [ 'class' => 'max-h-[70vh] shadow w-full h-auto' ] ) as $image ) : ?>

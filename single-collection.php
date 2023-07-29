@@ -11,13 +11,13 @@
 
 			<!-- Display Images -->
 			<section class="contained-images mb-8 lg:mb-10 xl:mb-12">
-				<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-[8vh] gap-y-px sm:gap-y-[8vh]">
+				<div class="flex flex-wrap items-center gap-x-2 gap-y-px sm:gap-y-[8vh]">
 
 					<?php foreach ( busch_get_collection_images( get_the_ID(), 'large', [ 'class' => 'max-h-[70vh] shadow w-full h-auto' ] ) as $image ) : ?>
 						<div
-							class="w-full flex items-center justify-evenly mx-auto <?php if ( $image->_orientation !== 'portrait' ): ?>lg:col-span-2<?php endif; ?>">
+							class="flex items-center justify-center lg:justify-evenly w-full mx-auto bg-white sm:bg-transparent sm:w-auto">
 							<div
-								class="flex w-full justify-center bg-white px-8 py-8 sm:inline-flex sm:w-auto sm:justify-normal sm:shadow-sm">
+								class="flex justify-center bg-white px-8 py-8 sm:inline-flex w-auto sm:justify-normal sm:shadow-sm">
 								<?php echo $image->_html; ?>
 							</div>
 						</div>

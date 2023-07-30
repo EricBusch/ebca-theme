@@ -26,7 +26,8 @@
 										class="m-0 p-0 text-xl font-semibold uppercase leading-none tracking-md sm:text-lg md:text-xl">
 										<?php esc_html_e( $collection->post_title ); ?>
 										<?php if ( $collection->post_status !== 'publish' ) : ?>
-											<span class="inline-flex items-center rounded-full bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 tracking-tight font-sans lowercase">
+											<span
+												class="inline-flex items-center rounded-full bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 tracking-tight font-sans lowercase">
 												<?php esc_html_e( $collection->post_status ); ?>
 											</span>
 										<?php endif; ?>
@@ -40,7 +41,7 @@
 									<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
 										<div>
 											<span
-												class="inline-flex items-center rounded-md bg-teal-100 px-1.5 py-0.5 text-xs font-medium text-teal-800 shadow">
+												class="mt-1 inline-flex items-center rounded-md border border-gray-400 px-1.5 py-0.5 text-xs font-medium text-gray-200 shadow">
 												<?php esc_html_e( count( $new_images ) ); ?> new
 											</span>
 										</div>

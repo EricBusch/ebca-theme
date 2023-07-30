@@ -20,6 +20,7 @@
 	},
 	"devDependencies": {
 		"@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
+		"@tailwindcss/typography": "^0.5.9",
 		"autoprefixer": "^10.4.0",
 		"browser-sync": "^2.26.14",
 		"cross-env": "^6.0.3",

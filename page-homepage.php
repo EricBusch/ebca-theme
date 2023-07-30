@@ -4,7 +4,7 @@
 <body>
 <div
 	class="grid h-screen grid-cols-1 grid-rows-3 bg-black bg-opacity-40 bg-cover bg-center bg-no-repeat text-white bg-blend-multiply"
-	style="background-image: url(<?php echo busch_get_homepage_bg_image(); ?>);">
+	style="background-image: url(<?php echo busch_get_homepage_bg_image( '2048x2048' ); ?>);">
 
 	<div class="mx-auto w-full py-12 pl-[12vw]">
 		<h1 class="opacity-90 text-2xl drop-shadow  font-heading font-normal uppercase tracking-lg text-white">

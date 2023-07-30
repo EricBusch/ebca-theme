@@ -23,14 +23,17 @@ function tailpress_setup() {
 		)
 	);
 
-    add_theme_support( 'custom-logo' );
-	add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
+	if ( is_admin() ) {
 
-	add_theme_support( 'align-wide' );
-	add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'custom-logo' );
 
-	add_theme_support( 'editor-styles' );
-	add_editor_style( 'css/editor-style.css' );
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'wp-block-styles' );
+
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'css/editor-style.css' );
+	}
 }
 
 add_action( 'after_setup_theme', 'tailpress_setup' );
@@ -50,7 +53,7 @@ add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
 /**
  * Get asset path.
  *
- * @param string  $path Path to asset.
+ * @param string $path Path to asset.
  *
  * @return string
  */
@@ -59,14 +62,14 @@ function tailpress_asset( $path ) {
 		return get_stylesheet_directory_uri() . '/' . $path;
 	}
 
-	return add_query_arg( 'time', time(),  get_stylesheet_directory_uri() . '/' . $path );
+	return add_query_arg( 'time', time(), get_stylesheet_directory_uri() . '/' . $path );
 }
 
 /**
  * Adds option 'li_class' to 'wp_nav_menu'.
  *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
+ * @param string $classes String of classes.
+ * @param mixed $item The current item.
  * @param WP_Term $args Holds the nav menu arguments.
  *
  * @return array
@@ -88,8 +91,8 @@ add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
  *
- * @param string  $classes String of classes.
- * @param mixed   $item The current item.
+ * @param string $classes String of classes.
+ * @param mixed $item The current item.
  * @param WP_Term $args Holds the nav menu arguments.
  *
  * @return array
@@ -107,3 +110,10 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
+
+/**
+ * Add new image sizes.
+ */
+add_action( 'after_setup_theme', function () {
+	add_image_size( '2048x2048', 2048, 2048 );
+} );

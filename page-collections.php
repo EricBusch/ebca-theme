@@ -16,14 +16,14 @@
 					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
-					   class="grid aspect-[16/9] grid-cols-1 grid-rows-1 flex-col justify-center rounded bg-black bg-opacity-50 bg-cover bg-center bg-no-repeat p-8 text-white bg-blend-multiply shadow-md transition duration-300 hover:bg-opacity-70 hover:shadow-sm lg:aspect-[4/5]"
+					   class="grid aspect-[16/9] grid-cols-1 grid-rows-1 flex-col justify-center rounded bg-slate-800 hover:bg-black bg-opacity-50 bg-cover bg-center bg-no-repeat p-8 text-white saturate-[.15] hover:saturate-100 bg-blend-multiply shadow-md transition duration-300 hover:bg-opacity-20 hover:shadow-sm lg:aspect-[4/5]"
 					   style="background-image: url(<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>);">
 						<div
 							class="flex h-full w-full flex-row items-start justify-start space-x-1 font-normal text-white">
 							<div class="flex h-full w-full flex-col justify-between space-y-1">
 								<div class="flex flex-col space-y-1">
 									<div
-										class="m-0 p-0 text-xl font-semibold uppercase leading-none tracking-md sm:text-lg md:text-xl">
+										class="m-0 p-0 text-xl font-semibold uppercase leading-none tracking-md sm:text-lg md:text-xl drop-shadow">
 										<?php esc_html_e( $collection->post_title ); ?>
 										<?php if ( $collection->post_status !== 'publish' ) : ?>
 											<span
@@ -33,7 +33,7 @@
 										<?php endif; ?>
 									</div>
 									<div
-										class="m-0 p-0 text-sm uppercase leading-none tracking-wider text-gray-200">
+										class="m-0 p-0 text-sm uppercase leading-none tracking-wider text-gray-200 drop-shadow">
 										<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
 										<?php esc_html_e( $image_count ); ?>
 										<?php echo $image_count === 1 ? 'image' : 'images'; ?>
@@ -48,7 +48,7 @@
 									<?php endif; ?>
 								</div>
 								<div
-									class="m-0 mt-auto p-0 text-right text-xs uppercase leading-none tracking-wider text-gray-200">
+									class="m-0 mt-auto p-0 text-right text-xs uppercase leading-none tracking-wider text-gray-200 drop-shadow">
 									Updated <?php esc_html_e( date( 'F Y', strtotime( $collection->post_modified ) ) ); ?>
 								</div>
 							</div>

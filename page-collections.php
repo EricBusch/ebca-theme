@@ -16,7 +16,7 @@
 					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
-					   class="grid aspect-[16/9] grid-cols-1 grid-rows-1 flex-col justify-center rounded bg-slate-800 hover:bg-black bg-opacity-50 bg-cover bg-center bg-no-repeat p-8 text-white saturate-[.15] hover:saturate-100 bg-blend-multiply shadow-md transition duration-300 hover:bg-opacity-20 hover:shadow-sm lg:aspect-[4/5]"
+					   class="grid aspect-[16/9] grid-cols-1 grid-rows-1 flex-col justify-center rounded bg-white hover:bg-black bg-cover bg-center bg-no-repeat p-8 text-white saturate-0 hover:saturate-100 bg-blend-difference shadow-md transition duration-300 hover:bg-opacity-20 hover:shadow-sm lg:aspect-[4/5]"
 					   style="background-image: url(<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>);">
 						<div
 							class="flex h-full w-full flex-row items-start justify-start space-x-1 font-normal text-white">

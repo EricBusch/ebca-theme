@@ -24,7 +24,7 @@
 						<div class="row-span-2 flex flex-row items-center h-full">
 							<div class="flex flex-col space-y-1">
 								<div
-									class="m-0 p-0 font-semibold uppercase leading-none tracking-wider">
+									class="mb-1 p-0 text-sm font-semibold uppercase leading-none tracking-wider">
 									<?php esc_html_e( $collection->post_title ); ?>
 									<?php if ( $collection->post_status !== 'publish' ) : ?>
 										<span
@@ -34,7 +34,7 @@
 									<?php endif; ?>
 								</div>
 								<div
-									class="m-0 p-0 text-sm uppercase leading-none tracking-wider text-gray-500">
+									class="m-0 p-0 text-xs uppercase leading-none tracking-wider text-gray-500">
 									<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
 									<?php esc_html_e( $image_count ); ?>
 									<?php echo $image_count === 1 ? 'image' : 'images'; ?>

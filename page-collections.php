@@ -16,13 +16,38 @@
 					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
-					   class="grid grid-cols-1 grid-rows-6 gap-2 aspect-square bg-white pt-8 px-8 pb-4 shadow">
-						<div
-							class="row-span-4 flex h-full w-full flex-row items-start justify-start space-x-1 font-normal text-white bg-cover bg-center bg-no-repeat bg-blend-multiply shadow saturate-[.15]"
-							style="background-image: url(<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>);">
-						</div>
-						<div class="row-span-2 flex flex-row items-center h-full">
-							<div class="flex flex-col space-y-1">
+					   class="flex flex-col bg-white pt-8 px-8 pb-6 shadow space-y-4">
+						<div class="flex flex-col text-xs text-gray-600">
+
+							<img src="<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>"
+							     alt="Thumbnail for image collection"
+							     class="aspect-square object-cover shadow"
+							/>
+
+							<h3 class="flex flex-row items-center space-x-1 mt-4 font-medium uppercase tracking-wider">
+								<?php if ( $collection->post_status !== 'publish' ) : ?>
+									<span title="<?php esc_attr_e( $collection->post_status ); ?>">
+										<svg xmlns="http://www.w3.org/2000/svg" class="w-2.5 h-2.5 fill-red-500" viewBox="0 0 448 512"><path d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h80V512H0V192H80z"/></svg>
+									</span>
+								<?php endif; ?>
+								<span class="p-0 m-0 leading-none"><?php esc_html_e( $collection->post_title ); ?></span>
+							</h3>
+
+							<div class="capitalize mt-1 font-sans text-gray-500">
+								<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
+								<?php esc_html_e( $image_count ); ?>
+								<?php echo $image_count === 1 ? 'image' : 'images'; ?>
+								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
+									<span class="bg-teal-100 text-teal-600 font-black px-1 py-0.5 leading-none rounded-sm uppercase text-2xs">new</span>
+								<?php endif; ?>
+							</div>
+
+							<div class="font-sans text-gray-500">
+								Updated <?php esc_html_e( date( 'F Y', strtotime( $collection->post_modified ) ) ); ?>
+							</div>
+
+
+							<div class="hidden">
 								<div
 									class="mb-1 p-0 text-sm font-semibold uppercase leading-none tracking-wider">
 									<?php esc_html_e( $collection->post_title ); ?>
@@ -39,6 +64,7 @@
 									<?php esc_html_e( $image_count ); ?>
 									<?php echo $image_count === 1 ? 'image' : 'images'; ?>
 								</div>
+								<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID ); ?>
 								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
 									<div>
 											<span

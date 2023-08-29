@@ -30,6 +30,9 @@ module.exports = {
             maxWidth: {
                 '8xl': '88rem',
                 '9xl': '96rem',
+            },
+            fontSize: {
+                '2xs': '0.625rem',
             }
         },
     },

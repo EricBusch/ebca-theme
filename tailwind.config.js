@@ -19,6 +19,7 @@ module.exports = {
                 handwriting: ['Caveat', ...defaultTheme.fontFamily.serif],
             },
             letterSpacing: {
+                'tightest': '-0.10em',
                 'md': '.15em',
                 'lg': '.20em',
                 'xl': '.30em',

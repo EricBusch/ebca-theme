@@ -10,7 +10,7 @@
 		<?php endwhile; ?>
 
 		<section class="default-width default-padding-x default-margin-b">
-			<div class="max-w-3xl mx-auto grid grid-cols-1 gap-6">
+			<div class="max-w-3xl mx-auto grid grid-cols-1 gap-12">
 				<?php foreach ( busch_get_collections() as $collection ) : ?>
 
 					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
@@ -18,12 +18,13 @@
 
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
-					   class="flex flex-row items-center p-4 bg-white shadow gap-4">
+					   class="flex flex-row items-center  gap-4 relative overflow-hidden">
 
-						<div class="w-40 shrink-0">
+
+						<div class="w-32 shrink-0">
 							<img src="<?php echo get_the_post_thumbnail_url( $collection->ID, 'medium' ); ?>"
 							     alt="Thumbnail for image collection"
-							     class="aspect-video object-cover shadow"
+							     class="aspect-square object-cover shadow"
 							/>
 						</div>
 
@@ -49,6 +50,7 @@
 							</div>
 						</div>
 					</a>
+
 
 				<?php endforeach; ?>
 			</div>

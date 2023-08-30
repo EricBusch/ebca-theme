@@ -9,70 +9,19 @@
 			] ); ?>
 		<?php endwhile; ?>
 
-		<section class="default-width default-padding-x default-margin-b">
-			<div class="max-w-3xl mx-auto grid grid-cols-1 gap-12">
-				<?php foreach ( busch_get_collections() as $collection ) : ?>
-
-					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
-					<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
-
-					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
-					   title="View images in this collection"
-					   class="flex flex-row items-center  gap-4 relative overflow-hidden">
-
-
-						<div class="w-32 shrink-0">
-							<img src="<?php echo get_the_post_thumbnail_url( $collection->ID, 'medium' ); ?>"
-							     alt="Thumbnail for image collection"
-							     class="aspect-square object-cover shadow"
-							/>
-						</div>
-
-						<div class="flex flex-col text-sm">
-
-							<h3 class="font-medium uppercase tracking-wider p-0 m-0 leading-none font-heading">
-								<?php esc_html_e( $collection->post_title ); ?>
-							</h3>
-
-							<div class="capitalize mt-2 font-sans text-gray-500 text-xs">
-								<?php esc_html_e( $image_count ); ?>
-								<?php echo $image_count === 1 ? 'image' : 'images'; ?>
-								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
-									<span
-										class="bg-teal-100 text-teal-600 font-black px-1 py-0.5 leading-none rounded-sm uppercase text-2xs">
-										new
-									</span>
-								<?php endif; ?>
-							</div>
-
-							<div class="font-sans text-gray-500 text-xs">
-								Updated <?php esc_html_e( date( 'F Y', strtotime( $collection->post_modified ) ) ); ?>
-							</div>
-						</div>
-					</a>
-
-
-				<?php endforeach; ?>
-			</div>
-		</section>
-
-		<div class="h-96 flex flex-row items-end"></div>
-
-		<?php get_template_part( 'template-parts/heading', null, [
-			'title' => get_the_title(),
-			'text'  => strip_tags( get_the_content(), [ 'a', 'strong', 'em', ] ),
-		] ); ?>
-
 		<!-- List of Collections -->
 		<section class="default-width default-padding-x default-margin-b">
 			<div
 				class="grid grid-cols-1 gap-6 font-heading sm:grid-cols-2 sm:gap-8 md:gap-8 lg:grid-cols-3 lg:gap-10 xl:gap-12">
 				<?php foreach ( busch_get_collections() as $collection ) : ?>
+
+					<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
 					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
+
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
-					   class="flex flex-col bg-white pt-8 px-8 pb-6 shadow space-y-4">
-						<div class="flex flex-col text-xs text-gray-600">
+					   class="flex flex-col bg-white pt-8 px-8 pb-6 shadow space-y-4 text-sky-600 visited:text-gray-500">
+						<div class="flex flex-col text-xs ">
 
 							<img src="<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>"
 							     alt="Thumbnail for image collection"
@@ -92,8 +41,8 @@
 								</span>
 							</h3>
 
-							<div class="capitalize mt-1 font-sans text-gray-500">
-								<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
+							<div class="capitalize mt-2 font-sans text-gray-500">
+
 								<?php esc_html_e( $image_count ); ?>
 								<?php echo $image_count === 1 ? 'image' : 'images'; ?>
 								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>

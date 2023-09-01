@@ -25,7 +25,7 @@
 
 							<img src="<?php echo get_the_post_thumbnail_url( $collection->ID, 'large' ); ?>"
 							     alt="Thumbnail for image collection"
-							     class="aspect-square object-cover shadow"
+							     class="aspect-square object-cover shadow saturate-[.15]"
 							/>
 
 							<h3 class="flex flex-row items-center space-x-1 mt-4 font-medium uppercase tracking-wider">

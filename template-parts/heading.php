@@ -10,9 +10,9 @@ $text  = $args['text'] ?? '';
 				<?php echo $title; ?>
 			</h1>
 		<?php endif; ?>
-		<div
-			class="inline-block h-px w-full max-w-xs rounded-full bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
 		<?php if ( $text ) : ?>
+			<div
+				class="inline-block h-px w-full max-w-xs rounded-full bg-gradient-to-r from-transparent via-slate-300 to-transparent"></div>
 			<p class="text-center font-sans leading-7 text-gray-600">
 				<?php echo $text; ?>
 			</p>

@@ -16,7 +16,7 @@
 				<?php foreach ( busch_get_collections() as $collection ) : ?>
 
 					<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
-					<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
+					<?php $new_images = busch_get_newest_attachment_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"
@@ -53,39 +53,6 @@
 
 							<div class="font-sans text-gray-500">
 								Updated <?php esc_html_e( date( 'F Y', strtotime( $collection->post_modified ) ) ); ?>
-							</div>
-
-
-							<div class="hidden">
-								<div
-									class="mb-1 p-0 text-sm font-semibold uppercase leading-none tracking-wider">
-									<?php esc_html_e( $collection->post_title ); ?>
-									<?php if ( $collection->post_status !== 'publish' ) : ?>
-										<span
-											class="inline-flex items-center rounded-full bg-red-100 px-1.5 py-0.5 text-xs font-medium text-red-700 tracking-tight font-sans lowercase">
-												<?php esc_html_e( $collection->post_status ); ?>
-											</span>
-									<?php endif; ?>
-								</div>
-								<div
-									class="m-0 p-0 text-xs uppercase leading-none tracking-wider text-gray-500">
-									<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
-									<?php esc_html_e( $image_count ); ?>
-									<?php echo $image_count === 1 ? 'image' : 'images'; ?>
-								</div>
-								<?php $new_images = busch_get_new_image_ids_for_collection( $collection->ID ); ?>
-								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
-									<div>
-											<span
-												class="mt-1 inline-flex items-center rounded-md border border-gray-400 px-1.5 py-0.5 text-xs font-medium text-gray-200 shadow">
-												<?php esc_html_e( count( $new_images ) ); ?> new
-											</span>
-									</div>
-								<?php endif; ?>
-								<div
-									class="text-xs uppercase leading-none tracking-wider text-gray-500">
-									Updated <?php esc_html_e( date( 'F Y', strtotime( $collection->post_modified ) ) ); ?>
-								</div>
 							</div>
 						</div>
 					</a>

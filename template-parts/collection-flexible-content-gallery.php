@@ -19,8 +19,7 @@ $row   = '<!-- Row Start --><div class="flex flex-col items-center justify-cente
 		$html .= sprintf( $link, $image->_lightbox, $image->_html );
 
 		// If the current image is a portrait and the next image is a portrait and we have only added 1 image to this row...
-		if ( $image->_orientation === 'portrait' && $image->_next_orientation === 'portrait' && $count < 2 ) {
-
+		if ( $image->_orientation === 'portrait' && $image->_next_orientation === 'portrait' && $count < 2 && ! $image->_last ) {
 			// Insert <hr> tag and continue to get the next image in loop before closing "row" div.
 			$html .= $hr;
 			continue;

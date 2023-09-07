@@ -10,7 +10,7 @@ $row   = '<!-- Row Start --><div class="flex flex-col items-center justify-cente
 <!-- Display Images from Collection -->
 <div
 	class="flex max-w-[82rem] mx-auto flex-col justify-evenly sm:gap-x-8 sm:gap-y-8 lg:gap-y-12 sm:px-8 default-margin-b">
-	<?php foreach ( busch_get_gallery_images( $attachment_ids, '2048x2048', [ 'class' => 'max-h-[76vh] shadow w-auto' ] ) as $image ) {
+	<?php foreach ( busch_get_gallery_images( $attachment_ids, '2048x2048', [ 'class' => 'max-h-[76vh] shadow w-auto max-w-5xl' ] ) as $image ) {
 
 		// Count "1" for a portrait image, "2" for a non-portrait image.
 		$count = $image->_orientation !== 'portrait' ? $count += 2 : $count += 1;

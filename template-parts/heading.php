@@ -6,7 +6,7 @@ $text  = $args['text'] ?? '';
 <section id="heading" class="default-width default-padding-x default-margin-b ">
 	<div class="mx-auto flex w-full max-w-xl flex-col items-center space-y-4">
 		<?php if ( $title ) : ?>
-			<h1 class="font-heading text-base font-medium uppercase tracking-xl text-gray-900">
+			<h1 class="font-heading text-base font-medium uppercase tracking-xl text-gray-900 text-center">
 				<?php echo $title; ?>
 			</h1>
 		<?php endif; ?>

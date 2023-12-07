@@ -9,7 +9,7 @@ $status = get_post_status();
 		<?php if ( $title ) : ?>
 			<div class="flex flex-row items-center space-x-2">
 				<?php if ( $status === 'private' )  : ?>
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 3-2.5 fill-red-500" viewBox="0 0 448 512">
+					<svg xmlns="http://www.w3.org/2000/svg" class="w-3 3 fill-red-500" viewBox="0 0 448 512">
 						<path
 							d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h80V512H0V192H80z"></path>
 					</svg>

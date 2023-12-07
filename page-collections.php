@@ -4,8 +4,8 @@
 		<?php while ( have_posts() ) : ?>
 			<?php the_post(); ?>
 			<?php get_template_part( 'template-parts/heading', null, [
-				'title' => get_the_title(),
-				'text'  => strip_tags( get_the_content(), [ 'a', 'strong', 'em', ] ),
+				'title'  => get_the_title(),
+				'text'   => strip_tags( get_the_content(), [ 'a', 'strong', 'em', ] ),
 			] ); ?>
 		<?php endwhile; ?>
 

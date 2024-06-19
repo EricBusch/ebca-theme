@@ -4,8 +4,8 @@
 		<?php while ( have_posts() ) : ?>
 			<?php the_post(); ?>
 			<?php get_template_part( 'template-parts/heading', null, [
-				'title'  => get_the_title(),
-				'text'   => strip_tags( get_the_content(), [ 'a', 'strong', 'em', ] ),
+				'title' => get_the_title(),
+				'text'  => strip_tags( get_the_content(), [ 'a', 'strong', 'em', ] ),
 			] ); ?>
 		<?php endwhile; ?>
 
@@ -47,7 +47,7 @@
 								<?php echo $image_count === 1 ? 'image' : 'images'; ?>
 								<?php if ( is_array( $new_images ) && count( $new_images ) > 0 ) : ?>
 									<span
-										class="bg-teal-100 text-teal-600 font-black px-1 py-0.5 leading-none rounded-sm uppercase text-2xs">new</span>
+										class="bg-teal-100 text-teal-600 font-black px-1 py-0.5 leading-none rounded-sm uppercase text-2xs"><?php esc_html_e( count( $new_images ) ); ?> new</span>
 								<?php endif; ?>
 							</div>
 

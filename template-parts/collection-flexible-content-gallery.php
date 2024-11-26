@@ -13,7 +13,7 @@ $row            = '<!-- Row Start --><div class="flex flex-col items-center just
 	<?php foreach (
 		busch_get_gallery_images( $attachment_ids, '2048x2048', [
 			'class' => 'max-h-[76vh] shadow w-auto',
-			'loading' => false, // Added this on 2024-11-13 to fix images getting shrunken if they had a loading="lazy" attribute on them.
+//			'loading' => false, // Added this on 2024-11-13 to fix images getting shrunken if they had a loading="lazy" attribute on them. Removed on 2024-11-25 21:08:16
 		] ) as $image
 	) {
 

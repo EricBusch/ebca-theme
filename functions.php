@@ -116,3 +116,26 @@ add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class'
 add_action( 'after_setup_theme', function () {
 	add_image_size( '2048x2048', 2048, 2048 );
 } );
+
+/**
+ * Site-wide notice
+ */
+add_action( 'tailpress_header', function () {
+
+	// If the $current_date is greater than the last day of the show, just return.
+	if ( current_time( 'Ymd' ) > '20250517' ) {
+		return;
+	}
+
+	echo '
+	<div class="bg-gray-800 text-gray-200 text-xs sm:text-sm py-2 lg:py-4 px-2">
+		<div class="flex flex-row items-center gap-x-3.5 justify-center">
+			<span class="font-bold">Gallery Exhibition</span> 
+			<span class="opacity-50">/</span>
+			<span>April 24 ~ May 17</span>
+			<span class="opacity-50">/</span>
+			<a href="https://greygallery.ca/" target="_blank" rel="noopener" class="underline">Grey Gallery</a>
+		</div>
+	</div>
+	';
+} );

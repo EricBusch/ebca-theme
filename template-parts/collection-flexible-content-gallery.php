@@ -11,7 +11,7 @@ $row            = '<!-- Row Start --><div class="flex flex-col items-center just
 <div
 	class="flex max-w-[82rem] mx-auto flex-col justify-evenly sm:gap-x-8 sm:gap-y-8 lg:gap-y-12 sm:px-8 default-margin-b">
 	<?php foreach (
-		busch_get_gallery_images( $attachment_ids, '2048x2048', [
+		ebca_get_gallery_images( $attachment_ids, '2048x2048', [
 			'class' => 'max-h-[76vh] shadow w-auto',
 //			'loading' => false, // Added this on 2024-11-13 to fix images getting shrunken if they had a loading="lazy" attribute on them. Removed on 2024-11-25 21:08:16
 		] ) as $image

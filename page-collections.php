@@ -13,10 +13,10 @@
 		<section class="default-width default-padding-x default-margin-b">
 			<div
 				class="grid grid-cols-1 gap-6 font-heading sm:grid-cols-2 sm:gap-8 md:gap-8 lg:grid-cols-3 lg:gap-10 xl:gap-12">
-				<?php foreach ( busch_get_collections() as $collection ) : ?>
+				<?php foreach ( ebca_get_collections() as $collection ) : ?>
 
-					<?php $image_count = busch_get_image_count_for_collection( $collection->ID ); ?>
-					<?php $new_images = busch_get_newest_attachment_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
+					<?php $image_count = ebca_get_image_count_for_collection( $collection->ID ); ?>
+					<?php $new_images = ebca_get_newest_attachment_ids_for_collection( $collection->ID, get_field( 'image_new_in_days', 'option' ) ); ?>
 
 					<a href="<?php echo esc_url( get_permalink( $collection->ID ) ); ?>"
 					   title="View images in this collection"

@@ -35,8 +35,8 @@
 
 
 			<!-- Collection Pagination -->
-			<?php $prev = busch_get_prev_collection( get_the_ID() ); ?>
-			<?php $next = busch_get_next_collection( get_the_ID() ); ?>
+			<?php $prev = ebca_get_prev_collection( get_the_ID() ); ?>
+			<?php $next = ebca_get_next_collection( get_the_ID() ); ?>
 			<section class="default-margin-b">
 				<div
 					class="mx-auto flex flex-col items-center justify-center gap-4 px-8 text-xs uppercase tracking-wider text-gray-500 sm:px-10 sm:text-sm md:text-xs lg:text-sm md:px-12 lg:max-w-6xl md:flex-row">

@@ -6,6 +6,17 @@
 /*    @apply mx-auto max-w-7xl px-0 sm:px-10 md:px-12;*/
 /*}*/
 
+.photographer-bio a {
+    @apply underline;
+}
+
+.photographer-bio > p:last-child {
+    padding-bottom: 0;
+}
+
+article > .sep:last-of-type {
+    display: none;
+}
 
 .default-width {
     @apply mx-auto max-w-7xl;
@@ -66,6 +77,7 @@ img.lqip {
     transform: scale(0.95); /* slight zoom to hide edges */
     transition: filter 0.6s ease, transform 0.6s ease;
 }
+
 img.lqip.loaded {
     filter: blur(0);
     transform: scale(1);

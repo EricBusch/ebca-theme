@@ -43,7 +43,7 @@
                         $is_me = boolval( get_field( 'is_me', $photographer->ID ) );
                         ?>
 
-                        <div class="flex flex-col gap-6 lg:gap-8">
+                        <div class="flex flex-col gap-6 lg:gap-7">
                             <a href="<?php echo esc_url( $image['url'] ); ?>"
                                class="border-4 border-white  ring-white sm:shadow-lg block"
                                title="View larger"
@@ -116,7 +116,12 @@
                             </div>
                         </div>
 
-                        <div class="sep max-w-3xl mx-auto px-6 bg-gradient-to-r from-transparent via-gray-300 to-transparent h-px w-3/4"></div>
+                        <?php
+                        /**
+                         * Divider
+                         * <div class="sep max-w-3xl mx-auto px-6 bg-gradient-to-r from-transparent via-gray-300 to-transparent h-px w-3/4"></div>
+                         */
+                        ?>
 
                     <?php endif; // if ( $photographer ) : ?>
                 <?php endwhile; // while ( have_rows( 'images' ) )  ?>

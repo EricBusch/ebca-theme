@@ -14,9 +14,9 @@
     padding-bottom: 0;
 }
 
-article > .sep:last-of-type {
-    display: none;
-}
+/*article > .sep:last-of-type {*/
+/*    display: none;*/
+/*}*/
 
 .default-width {
     @apply mx-auto max-w-7xl;

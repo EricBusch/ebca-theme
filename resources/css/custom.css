@@ -14,6 +14,10 @@
     padding-bottom: 0;
 }
 
+li.double-exposure > a {
+    text-shadow: 2px 2px 0 hsla(226, 12%, 80%, 1);
+}
+
 /*article > .sep:last-of-type {*/
 /*    display: none;*/
 /*}*/

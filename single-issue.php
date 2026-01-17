@@ -17,7 +17,7 @@
                 'text'  => 'Issue ' . esc_html( $issue_number ) . ' &mdash; Featuring ' . esc_html( $guest ),
         ] ); ?>
 
-        <article class="max-w-6xl mx-auto mb-20 px-0 sm:px-6 space-y-20 flex flex-col">
+        <article class="max-w-6xl mx-auto mb-20 px-0 sm:px-6 space-y-12 sm:space-y-20 flex flex-col">
 
             <?php if ( have_rows( 'images' ) ) : ?>
                 <?php while ( have_rows( 'images' ) ) : ?>
@@ -63,14 +63,14 @@
                                 ?>
                             </a>
                             <div class="grid grid-cols-1 md:grid-cols-5 px-6">
-                                <div class="col-span-1 md:col-span-3 bg-white p-12">
+                                <div class="col-span-1 md:col-span-3 bg-white p-6 sm:p-12">
                                     <?php if ( ! empty( $thoughts ) ) : ?>
-                                        <div class="prose">
+                                        <div class="prose prose-base">
                                             <?php echo wp_kses_post( $thoughts ); ?>
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <div class="col-span-1 md:col-span-2 bg-gray-200/40 p-12">
+                                <div class="col-span-1 md:col-span-2 bg-gray-200/40 p-6 sm:p-12">
                                     <div class="flex flex-col space-y-6">
 
                                         <?php if ( ! empty( $title ) ) : ?>

@@ -13,10 +13,10 @@
 
     <a href="/double-exposure/"
        title="Learn more about the Double Exposure newsletter"
-       class="bg-rose-600/75 text-white text-sm px-2 py-1.5 flex flex-row items-center justify-center">
+       class="bg-[#EA5E76] text-white text-sm px-2 py-2 flex flex-row items-center justify-center group">
         <div class="max-w-2xl flex flex-row items-center gap-x-3">
-            <p><strong class="italic font-black leading-none">Double Exposure</strong> is here!</p>
-            <span class="rounded-full bg-white px-2.5 py-1 text-xs font-semibold text-rose-900 shadow-sm ring-1 ring-inset ring-rose-500 hover:bg-gray-50 dark:bg-white/10 dark:text-white dark:shadow-none dark:ring-white/5 dark:hover:bg-white/20 whitespace-nowrap">Learn more</span>
+            <p><strong class="italic font-bold leading-none">Double Exposure</strong> is here!</p>
+            <span>Learn more <span class="inline-block transition group-hover:translate-x-1 transform">→</span></span>
         </div>
     </a>
 

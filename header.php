@@ -14,9 +14,10 @@
     <a href="/double-exposure/"
        title="Learn more about the Double Exposure newsletter"
        class="bg-[#EA5E76] text-white text-sm px-2 py-2 flex flex-row items-center justify-center group">
-        <div class="max-w-2xl flex flex-row items-center gap-x-3">
+        <div class="max-w-2xl flex flex-row items-center gap-x-1">
             <p><strong class="italic font-bold leading-none">Double Exposure</strong> is here!</p>
-            <span>Learn more <span class="inline-block transition group-hover:translate-x-1 transform">→</span></span>
+            <span class="pl-3">Learn more</span>
+            <span class="inline-block transition group-hover:translate-x-1 transform font-medium">→</span>
         </div>
     </a>
 

@@ -45,7 +45,7 @@
 
                         <div class="flex flex-col gap-6 lg:gap-7">
                             <a href="<?php echo esc_url( $image['url'] ); ?>"
-                               class="border-4 border-white  ring-white sm:shadow-lg block"
+                               class="flex flex-row items-center justify-center"
                                title="View larger"
                                data-fslightbox>
                                 <?php
@@ -54,7 +54,7 @@
                                         'full',
                                         false,
                                         [
-                                                'class'    => '',
+                                                'class'    => 'border-4 border-white sm:shadow-lg max-h-[88vh] w-auto',
                                                 'alt'      => esc_attr( $image['alt'] ?? 'Image by ' . $name ),
                                                 'loading'  => 'eager',
                                                 'decoding' => 'async',

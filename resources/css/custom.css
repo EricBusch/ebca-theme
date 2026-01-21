@@ -22,6 +22,16 @@ li.double-exposure > a {
 /*    display: none;*/
 /*}*/
 
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
 .default-width {
     @apply mx-auto max-w-7xl;
 }

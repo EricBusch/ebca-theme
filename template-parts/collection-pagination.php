@@ -1,0 +1,80 @@
+<?php
+$prev = ebca_get_prev_collection( get_the_ID() );
+$next = ebca_get_next_collection( get_the_ID() );
+?>
+<!-- Collection Pagination -->
+<section class="default-margin-b">
+	<div
+		class="mx-auto flex flex-col items-center justify-center gap-4 px-8 text-xs uppercase tracking-wider text-gray-500 sm:px-10 sm:text-sm md:text-xs lg:text-sm md:px-12 lg:max-w-6xl md:flex-row">
+
+		<!-- Previous Collection -->
+		<a href="<?php echo esc_url( get_permalink( $prev->ID ) ); ?>" title="View previous collection"
+		   class="group flex w-full flex-row items-center justify-between space-x-4 bg-white p-1.5 shadow transition duration-300 hover:bg-transparent hover:text-gray-900 hover:shadow-none lg:w-1/2">
+			<div
+				class="rounded-full bg-white p-2 transition group-hover:-translate-x-0.5 group-hover:shadow">
+				<svg xmlns="http://www.w3.org/2000/svg"
+					 class="mr-auto h-5 w-5 fill-gray-500 group-hover:fill-gray-900" viewBox="0 0 320 512">
+					<path
+						d="M-1.9 256l17-17L207 47l17-17L257.9 64 241 81 65.9 256 241 431l17 17L224 481.9l-17-17L15 273l-17-17z"/>
+				</svg>
+			</div>
+			<div class="flex flex-row items-center space-x-4">
+				<div class="flex flex-row items-center space-x-1.5">
+					<?php if ( get_post_status( $prev->ID ) === 'private' ): ?>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-red-500"
+							 viewBox="0 0 448 512">
+							<path
+								d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h80V512H0V192H80z"></path>
+						</svg>
+					<?php endif; ?>
+					<div class="truncate whitespace-nowrap"><?php esc_html_e( $prev->post_title ); ?></div>
+				</div>
+				<?php echo get_the_post_thumbnail(
+					$prev->ID,
+					'medium',
+					[
+						'class' => 'aspect-square w-auto h-10 shrink-0 object-cover group-hover:shadow sm:aspect-video sm:h-16 md:h-12 lg:h-16',
+						'alt'   => esc_attr( $prev->post_title . ' Collection Image' ),
+					]
+				); ?>
+			</div>
+		</a>
+		<!-- /Previous Collection -->
+
+		<!-- Next Collection -->
+		<a href="<?php echo esc_url( get_permalink( $next->ID ) ); ?>" title="View next collection"
+		   class="group flex w-full flex-row items-center justify-between space-x-4 bg-white p-1.5 shadow transition duration-300 hover:bg-transparent hover:text-gray-900 hover:shadow-none lg:w-1/2">
+			<div class="flex flex-row items-center space-x-4">
+				<?php echo get_the_post_thumbnail(
+					$next->ID,
+					'medium',
+					[
+						'class' => 'aspect-square w-auto h-10 shrink-0 object-cover group-hover:shadow sm:aspect-video sm:h-16 md:h-12 lg:h-16',
+						'alt'   => esc_attr( $next->post_title . ' Collection Image' ),
+					]
+				); ?>
+				<div class="flex flex-row items-center space-x-1.5">
+					<?php if ( get_post_status( $next->ID ) === 'private' ): ?>
+						<svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 fill-red-500"
+							 viewBox="0 0 448 512">
+							<path
+								d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h80V512H0V192H80z"></path>
+						</svg>
+					<?php endif; ?>
+					<div class="truncate whitespace-nowrap"><?php esc_html_e( $next->post_title ); ?></div>
+				</div>
+			</div>
+			<div
+				class="rounded-full bg-white p-2 transition group-hover:translate-x-0.5 group-hover:shadow">
+				<svg xmlns="http://www.w3.org/2000/svg"
+					 class="mr-auto h-5 w-5 fill-gray-500 group-hover:fill-gray-900" viewBox="0 0 320 512">
+					<path
+						d="M321.9 256l-17 17L113 465l-17 17L62.1 448l17-17 175-175L79 81l-17-17L96 30.1l17 17L305 239l17 17z"/>
+				</svg>
+			</div>
+		</a>
+		<!-- /Next Collection -->
+
+	</div>
+</section>
+<!-- /Collection Pagination -->

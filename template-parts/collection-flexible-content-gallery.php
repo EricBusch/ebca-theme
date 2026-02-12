@@ -31,9 +31,10 @@ foreach ( $images_data as $image_data ) {
 		$individual_disabled = isset( $shadow_settings[ $image->ID ] ) && $shadow_settings[ $image->ID ];
 		$show_shadow         = ! $individual_disabled && ! $disable_shadows_all;
 
-		// Add shadow class to thumbnail if needed.
+		// Add a shadow class to the thumbnail if needed.
 		if ( $show_shadow ) {
 			$image->_html = str_replace( 'class="', 'class="shadow ', $image->_html );
+            $link = str_replace( 'data-fslightbox', 'data-class="shadow-lg" data-fslightbox', $link );
 		}
 
 		// Count "1" for a portrait image, "2" for a non-portrait image.

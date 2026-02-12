@@ -141,33 +141,9 @@ add_action( 'tailpress_header', function () {
 } );
 
 /**
- * ACF Local JSON - Save and Load Path.
- *
- * This enables ACF PRO to automatically save/load field groups from JSON files.
+ * Load ACF field groups.
  */
-add_filter( 'acf/settings/save_json', 'ebca_acf_json_save_point' );
-/**
- * Set ACF JSON save location.
- *
- * @param string $path Original path.
- * @return string Modified path.
- */
-function ebca_acf_json_save_point( $path ) {
-	return get_stylesheet_directory() . '/acf-json';
-}
-
-add_filter( 'acf/settings/load_json', 'ebca_acf_json_load_point' );
-/**
- * Set ACF JSON load location.
- *
- * @param array $paths Original paths.
- * @return array Modified paths.
- */
-function ebca_acf_json_load_point( $paths ) {
-	unset( $paths[0] );
-	$paths[] = get_stylesheet_directory() . '/acf-json';
-	return $paths;
-}
+require_once get_template_directory() . '/inc/acf/field-groups.php';
 
 /**
  * Register ACF Options Page.

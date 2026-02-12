@@ -23,11 +23,18 @@
 					<?php endif; ?>
 
 					<?php if ( get_row_layout() === 'gallery' ): ?>
-						<?php get_template_part( 'template-parts/collection-flexible-content', 'gallery', [
-							'attachment_ids' => array_map( function ( $image ) {
+						<?php
+						$images              = get_sub_field( 'images' );
+						$disable_shadows_all = get_sub_field( 'disable_shadows_all' );
+
+						get_template_part( 'template-parts/collection-flexible-content', 'gallery', [
+							'attachment_ids'      => array_map( function ( $image ) {
 								return absint( $image['attachment_id'] );
-							}, get_sub_field( 'images' ) ),
-						] ); ?>
+							}, $images ),
+							'images_data'         => $images,
+							'disable_shadows_all' => $disable_shadows_all,
+						] );
+						?>
 					<?php endif; ?>
 
 				<?php endwhile; ?>

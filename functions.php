@@ -130,7 +130,7 @@ add_action( 'tailpress_header', function () {
 	echo '
 	<div class="bg-gray-800 text-gray-200 text-xs sm:text-sm py-2 lg:py-4 px-2">
 		<div class="flex flex-row items-center gap-x-3.5 justify-center">
-			<span class="font-bold">Gallery Exhibition</span> 
+			<span class="font-bold">Gallery Exhibition</span>
 			<span class="opacity-50">/</span>
 			<span>April 24 ~ May 17</span>
 			<span class="opacity-50">/</span>
@@ -139,3 +139,54 @@ add_action( 'tailpress_header', function () {
 	</div>
 	';
 } );
+
+/**
+ * ACF Local JSON - Save and Load Path.
+ *
+ * This enables ACF PRO to automatically save/load field groups from JSON files.
+ */
+add_filter( 'acf/settings/save_json', 'ebca_acf_json_save_point' );
+/**
+ * Set ACF JSON save location.
+ *
+ * @param string $path Original path.
+ * @return string Modified path.
+ */
+function ebca_acf_json_save_point( $path ) {
+	return get_stylesheet_directory() . '/acf-json';
+}
+
+add_filter( 'acf/settings/load_json', 'ebca_acf_json_load_point' );
+/**
+ * Set ACF JSON load location.
+ *
+ * @param array $paths Original paths.
+ * @return array Modified paths.
+ */
+function ebca_acf_json_load_point( $paths ) {
+	unset( $paths[0] );
+	$paths[] = get_stylesheet_directory() . '/acf-json';
+	return $paths;
+}
+
+/**
+ * Register ACF Options Page.
+ */
+if ( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page(
+		array(
+			'page_title' => __( 'Site Options', 'ebca-theme' ),
+			'menu_title' => __( 'Site Options', 'ebca-theme' ),
+			'menu_slug'  => 'acf-options',
+			'capability' => 'edit_posts',
+			'redirect'   => false,
+		)
+	);
+}
+
+/**
+ * Load custom post types.
+ */
+require_once get_template_directory() . '/inc/custom-post-types/collection.php';
+require_once get_template_directory() . '/inc/custom-post-types/issue.php';
+require_once get_template_directory() . '/inc/custom-post-types/photographer.php';

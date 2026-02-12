@@ -1,0 +1,196 @@
+{
+    "key": "group_64c25d318a6f1",
+    "title": "Collection fields",
+    "fields": [
+        {
+            "key": "field_64f393ee80b98",
+            "label": "Flexible Content",
+            "name": "flexible_content",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_64f393f1940ee": {
+                    "key": "layout_64f393f1940ee",
+                    "name": "gallery",
+                    "label": "Gallery",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67ac1234567a0",
+                            "label": "Disable shadows for all images",
+                            "name": "disable_shadows_all",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "Check to remove shadows from all images in this gallery. Individual images can still override this setting.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "Yes",
+                            "ui_off_text": "No"
+                        },
+                        {
+                            "key": "field_64f3949a80b9c",
+                            "label": "Images",
+                            "name": "images",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Image",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_64f394a480b9d",
+                                    "label": "Image",
+                                    "name": "attachment_id",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "Select an image.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_64f3949a80b9c"
+                                },
+                                {
+                                    "key": "field_64f3a36261888",
+                                    "label": "Added at",
+                                    "name": "added_at",
+                                    "aria-label": "",
+                                    "type": "date_picker",
+                                    "instructions": "Select date image added to this Collection.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "display_format": "Y-m-d",
+                                    "return_format": "Y-m-d",
+                                    "first_day": 0,
+                                    "default_to_current_date": 0,
+                                    "default_value": "20260212",
+                                    "parent_repeater": "field_64f3949a80b9c"
+                                },
+                                {
+                                    "key": "field_67ac1234567a1",
+                                    "label": "Disable shadow",
+                                    "name": "disable_shadow",
+                                    "aria-label": "",
+                                    "type": "true_false",
+                                    "instructions": "Check to remove shadow from this image.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "Yes",
+                                    "ui_off_text": "No",
+                                    "parent_repeater": "field_64f3949a80b9c"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "1",
+                    "max": ""
+                },
+                "layout_64f394f3cd28f": {
+                    "key": "layout_64f394f3cd28f",
+                    "name": "text",
+                    "label": "Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64f394fecd291",
+                            "label": "Content",
+                            "name": "content",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add Row"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "collection"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": ""
+}

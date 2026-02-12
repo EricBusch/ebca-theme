@@ -1,21 +1,40 @@
 <?php
 /** @var int[] $attachment_ids */
-$attachment_ids = $args['attachment_ids'] ?? [];
-$count          = 0;
-$html           = '';
-$hr             = '<hr class="sm:hidden border-gray-200 w-full" />';
-$link           = '<a href="%s" class="bg-white p-8 sm:shadow" title="View larger" data-fslightbox>%s</a>';
-$row            = '<!-- Row Start --><div class="flex flex-col items-center justify-center bg-white sm:gap-8 sm:bg-transparent md:flex-row">%s</div><!-- /Row Start -->';
+$attachment_ids      = $args['attachment_ids'] ?? [];
+$images_data         = $args['images_data'] ?? [];
+$disable_shadows_all = $args['disable_shadows_all'] ?? false;
+$count               = 0;
+$html                = '';
+$hr                  = '<hr class="sm:hidden border-gray-200 w-full" />';
+$link                = '<a href="%s" class="bg-white p-8 sm:shadow" title="View larger" data-fslightbox>%s</a>';
+$row                 = '<!-- Row Start --><div class="flex flex-col items-center justify-center bg-white sm:gap-8 sm:bg-transparent md:flex-row">%s</div><!-- /Row Start -->';
+
+// Create a map of attachment_id => disable_shadow setting.
+$shadow_settings = [];
+foreach ( $images_data as $image_data ) {
+	$attachment_id                    = absint( $image_data['attachment_id'] );
+	$shadow_settings[ $attachment_id ] = isset( $image_data['disable_shadow'] ) && $image_data['disable_shadow'];
+}
 ?>
 <!-- Display Images from Collection -->
 <div
 	class="flex max-w-[82rem] mx-auto flex-col justify-evenly sm:gap-x-8 sm:gap-y-8 lg:gap-y-12 sm:px-8 default-margin-b">
 	<?php foreach (
 		ebca_get_gallery_images( $attachment_ids, '2048x2048', [
-			'class' => 'max-h-[76vh] shadow w-auto',
+			'class' => 'max-h-[76vh] w-auto',
 //			'loading' => false, // Added this on 2024-11-13 to fix images getting shrunken if they had a loading="lazy" attribute on them. Removed on 2024-11-25 21:08:16
 		] ) as $image
 	) {
+
+		// Determine if this image should have a shadow.
+		// Individual setting overrides collection-level setting.
+		$individual_disabled = isset( $shadow_settings[ $image->ID ] ) && $shadow_settings[ $image->ID ];
+		$show_shadow         = ! $individual_disabled && ! $disable_shadows_all;
+
+		// Add shadow class to thumbnail if needed.
+		if ( $show_shadow ) {
+			$image->_html = str_replace( 'class="', 'class="shadow ', $image->_html );
+		}
 
 		// Count "1" for a portrait image, "2" for a non-portrait image.
 		$count = $image->_orientation !== 'portrait' ? $count += 2 : $count += 1;
